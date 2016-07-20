@@ -1,0 +1,65 @@
+<script>
+  /**
+   *
+   * Component used to provide easy access to web analytics component. To fire web analytics events, you simply add this
+   * behavior to your component and then call one of the methods below, e.g.
+   *
+   *    this.webAnalyticsActionEvent('button pressed');
+   *
+   * @polymerBehavior WebAnalyticsBehavior
+   * @group TPA Utility
+   * @pseudoElement tpa-web-analytics.html
+   * @demo demo/index.html
+   */
+  WebAnalyticsBehavior = {
+    properties: {
+    },
+
+    /**
+     * To be called when we want to register a page load.
+     * @param category Category of the page
+     * @param pagename Name of the page
+     */
+    webAnalyticsPageload: function (category, pagename) {
+      this.fire('iron-signal', {name: 'businessmonitoring-send-page-visit', data: { category: category, pagename: pagename}});
+    },
+
+    /**
+     * To be called when an action / event occurs.
+     * @param the action to track
+     */
+    webAnalyticsActionEvent: function (action) {
+      this.fire('iron-signal', {name: 'businessmonitoring-send-action', data: { action: action }});
+    },
+
+    /**
+     * To be called when an error occurs
+     * @param error the occurred error
+     * @param errorType the type of error
+     */
+    webAnalyticsError: function (error, errorType) {
+      this.fire('iron-signal', {name: 'businessmonitoring-send-error-message', data: { error: this.error, errorType: this.errorType}});
+    },
+
+    /**
+     * To be called when a search action is performed.
+     * @param searchTerm The term of the search query.
+     */
+    webAnalyticsSearchAction: function (searchTerm) {
+      this.fire('iron-signal', {name: 'businessmonitoring-send-search-action', data: { searchTerm: searchTerm }});
+    },
+
+    /**
+     * To be called on each form step for monitoring behavior in a wizard.
+     * @param formId Identifier of the form.
+     * @param formStep Current step.
+     * @param formStatus Status of the form ('view' for starting the form or 'conf' for finishing the form).
+     * @param transactionId This should either be a generated random, unique value (epoch timestamp + random value) or an actual transactional ID
+     * @param formOutcome In case a form has a specific outcome (a customer can either signup for A or B within the same form)
+     */
+    webAnalyticsFormStep: function (formId, formStep, formStatus, transactionId, formOutcome) {
+      this.fire('iron-signal', {name: 'businessmonitoring-send-form-step', data: { formId: formId, formStep: formStep, formStatus: formStatus, transactionId: transactionId, formOutcome: formOutcome }});
+    },
+
+  }
+</script>

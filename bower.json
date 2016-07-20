@@ -1,0 +1,28 @@
+{
+  "name": "tpa-web-analytics",
+  "version": "0.0.1",
+  "authors": [
+    "Rik van de Ven <rikvandeven@gmail.com>"
+  ],
+  "description": "A component to provide web analytics behavior.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "analytics"
+  ],
+  "main": "tpa-web-analytics.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/ing-group/tpa-web-analytics/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.5.0",
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "iron-signals": "PolymerElements/iron-signals#^1.0.3"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "tpa-web-analytics",
+  "version": "0.0.1",
+  "description": "A component containing Behavior for generic web analytics.",
+  "main": "wct.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "drakov": "^1.0.0",
+    "gulp": "^3.9.1",
+    "web-component-tester-istanbul": "^0.10.0"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ING-Group/tpa-web-analytics.git"
+  },
+  "keywords": [
+    "tpa",
+    "polymer",
+    "analytics"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ING-Group/tpa-web-analytics/issues"
+  },
+  "homepage": "https://github.com/ING-Group/tpa-web-analytics#readme"
+}
