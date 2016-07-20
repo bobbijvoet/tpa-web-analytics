@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tpa-region-selection Demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="tpa-web-analytics-demo-component.html">
+    <link rel="import" href="../../paper-card/paper-card.html">
+    <style>
+      paper-card{
+        width:100%;
+        padding:15px;
+        margin:10px 0;
+      }
+
+      .container{
+        width:500px;
+        margin:0 auto;
+        margin-top:100px;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          width: 100%;
+        }
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+      <tpa-web-analytics-demo-component></tpa-web-analytics-demo-component>
+  </div>
+</body>
+</html>

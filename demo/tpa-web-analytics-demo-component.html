@@ -1,0 +1,46 @@
+<link rel="import" href="../../polymer/polymer.html">
+
+<link rel="import" href="../../iron-signals/iron-signals.html">
+<link rel="import" href="../../tpa-font/tpa-font.html">
+<link rel="import" href="../../tpa-icons/tpa-icons.html">
+<link rel="import" href="../../tpa-styles/tpa-styles.html">
+<link rel="import" href="../../paper-button/paper-button.html">
+<link rel="import" href="../../paper-card/paper-card.html">
+
+<link rel="import" href="../../tpa-web-analytics/tpa-web-analytics.html">
+
+
+<dom-module id="tpa-web-analytics-demo-component">
+    <template>
+
+      <iron-signals on-iron-signal-businessmonitoring-send-action="onAction"></iron-signals>
+
+        <paper-card>
+          <div class="card-content">
+            Pressing this button will trigger a web analytics call, which will be intercepted with an alert.
+
+            <div class="card-actions">
+              <paper-button raised id="formSubmit" class="primary" on-tap="submit">Send Signal</paper-button>
+            </div>
+          </div>
+        </paper-card>
+
+    </template>
+    <script>
+        Polymer({
+            is:"tpa-web-analytics-demo-component",
+            behaviors: [WebAnalyticsBehavior],
+
+            properties: {
+            },
+
+            submit: function () {
+              this.webAnalyticsActionEvent('button pressed action event');
+            },
+
+            onAction: function (data) {
+              alert('received signal from web analytics: ' + data.detail.action);
+            }
+        });
+    </script>
+</dom-module>

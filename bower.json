@@ -23,6 +23,10 @@
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "web-component-tester": "^4.0.0",
-    "iron-signals": "PolymerElements/iron-signals#^1.0.3"
+    "iron-signals": "PolymerElements/iron-signals#^1.0.3",
+    "tpa-styles": "https://github.com/ING-Group/tpa-styles.git",
+    "tpa-icons": "https://github.com/ING-Group/tpa-icons.git",
+    "paper-button": "PolymerElements/paper-button",
+    "paper-card": "PolymerElements/paper-card"
   }
 }
